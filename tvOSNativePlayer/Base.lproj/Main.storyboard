@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tvOSNativePlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3IC-6J-GlI">
+                                <rect key="frame" x="0.0" y="403" width="1920" height="274"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dok-4q-TA0" userLabel="pizza">
+                                        <rect key="frame" x="863" y="94" width="195" height="86"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="pizza:forEvent:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="DF2-pC-dJh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="Dok-4q-TA0" secondAttribute="centerY" id="2s4-3q-1NT"/>
+                                    <constraint firstAttribute="centerX" secondItem="Dok-4q-TA0" secondAttribute="centerX" id="yDj-8g-cDA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="videoInfo" destination="3IC-6J-GlI" id="E0b-rk-8sA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="KZn-0i-mlm">
+            <objects>
+                <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspect" id="621-OT-hP5" customClass="PlayerViewController" customModule="tvOSNativePlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VTX-Ar-LXG">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <gestureRecognizers/>
+                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="O1d-ub-mlL" appends="YES" id="Lht-6O-HYF"/>
+                            <outletCollection property="gestureRecognizers" destination="T2D-GU-gEt" appends="YES" id="WF8-wd-wZ0"/>
+                            <outletCollection property="gestureRecognizers" destination="vwx-Mz-tnJ" appends="YES" id="G69-uZ-auz"/>
+                            <outletCollection property="gestureRecognizers" destination="W9Z-62-C3H" appends="YES" id="4nP-yX-xzJ"/>
+                        </connections>
+                    </button>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0e-mT-B0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="O1d-ub-mlL" userLabel="Swipe Gesture Recognizer Up">
+                    <connections>
+                        <action selector="upGesture:" destination="621-OT-hP5" id="Iag-V7-N6t"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="T2D-GU-gEt" userLabel="Swipe Gesture Recognizer Down">
+                    <connections>
+                        <action selector="downGesture2:" destination="621-OT-hP5" id="oBe-gS-pcO"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="vwx-Mz-tnJ" userLabel="Swipe Gesture Recognizer Left">
+                    <connections>
+                        <action selector="leftGesture:" destination="621-OT-hP5" id="irv-vU-q9U"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="W9Z-62-C3H" userLabel="Swipe Gesture Recognizer Right">
+                    <connections>
+                        <action selector="rightGesture:" destination="621-OT-hP5" id="rQX-fN-EGf"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="m6W-7h-jxb">
+                    <connections>
+                        <action selector="panGesture:" destination="621-OT-hP5" id="Hlk-PW-oaa"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="70" y="2376"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <nil key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
